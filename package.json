@@ -7,6 +7,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev webpack-dev-server",
     "build-glsl": "webpack --config webpack.glsl.config.js",
+    "build-glsl_forFWG": "webpack --config webpack.glsl.forFWG.config.js",
     "build-example": "cross-env NODE_ENV=prd webpack --config webpack.config.js",
     "eschange": "babel src -d lib",
     "prepublish": "npm run build-glsl && npm run eschange "

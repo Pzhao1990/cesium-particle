@@ -143,6 +143,7 @@ float calculateWindNorm(vec3 speed) {
     vec2 wRange = getRange(wSpeedRange);
     if(length(speed.xyz) == 0.0){
       return 0.0;
+      return 0.0;
     }
 
     percent.x = (abs(speed.x) - uRange.x) / (uRange.y - uRange.x);
@@ -153,6 +154,7 @@ float calculateWindNorm(vec3 speed) {
       percent.z = (abs(speed.z) - wRange.x) / (wRange.y - wRange.x);
     }
     float norm = length(percent);
+    // float norm = length(speed);
 
     return norm;
 }

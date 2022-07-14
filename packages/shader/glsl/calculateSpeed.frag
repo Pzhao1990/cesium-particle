@@ -160,6 +160,9 @@ float calculateWindNorm(vec3 speed) {
 }
 
 void main() {
+    /*if(czm_sceneMode!=czm_sceneMode3D){
+        return;
+    }*/
     speedScaleFactor = speedFactor * pixelSize;
     // texture coordinate must be normalized
     vec3 lonLatLev = texture2D(currentParticlesPosition, v_textureCoordinates).rgb;

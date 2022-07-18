@@ -3,7 +3,7 @@
  * @Company: HT
  * @Date: 2022-07-07 15:52:39
  * @LastEditors: P.Zhao
- * @LastEditTime: 2022-07-14 16:22:20
+ * @LastEditTime: 2022-07-15 09:52:28
  * @Description:
  * @FilePath: \cesium-particle\example\map.js
  */
@@ -42,9 +42,14 @@ export var initMap = function (cesiumContainer) {
       roll: Cesium.Math.toRadians(0)
     }
   })
-  let imageryProvider = new Cesium.ArcGisMapServerImageryProvider({
-    url: 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer'
+  //   let imageryProvider = new Cesium.ArcGisMapServerImageryProvider({
+  //     url: 'https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer'
+  //   })
+
+  let imageryProvider = new Cesium.UrlTemplateImageryProvider({
+    url: 'http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetWarm/MapServer/tile/{z}/{y}/{x}/'
   })
+
   viewer._cesiumWidget._creditContainer.style.display = 'none'
   viewer.imageryLayers.addImageryProvider(imageryProvider)
   viewer.scene.fog.density = 0.0001 // 雾气中水分含量
